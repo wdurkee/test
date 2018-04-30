@@ -14,8 +14,15 @@ class SplashScreen extends React.Component {
           <Text style={styles.textStyle}>
           Budlr at Your Service.
           </Text>
+          <Text style={styles.textStyleSmall}>
+          Swipe to Start  >>>
+          </Text>
+
+
           <Image style={styles.manImageStyle} source={{ uri: 'https://www.clker.com/cliparts/3/u/P/P/q/W/walking-icon-hi.png' }} />
-          <Image style={styles.arrowImageStyle} source={{ uri: 'https://image.flaticon.com/icons/svg/28/28370.svg' }} />
+          <Text style={styles.arrows} >
+            > > >
+          </Text>
       </GestureRecognizer>
     );
   }
@@ -29,6 +36,7 @@ const styles = {
     justifyContent: 'flex-start',
     alignItems: 'stretch',
     position: 'relative',
+    backgroundColor: 'white'
   },
   textStyle: {
     fontStyle: 'italic',
@@ -42,18 +50,33 @@ const styles = {
     resizeMode: 'center',
     flex: 1,
     height: 50,
-    width: 30,
+    width: 20,
     paddingLeft: 500,
     paddingTop: 525
   },
   arrowImageStyle: {
-    resizeMode: 'center',
     flex: 1,
     height: 100,
     width: 100,
     paddingLeft: 500,
     paddingTop: 650
 
+  },
+  textStyleSmall: {
+    fontStyle: 'italic',
+    paddingTop: 10,
+    paddingLeft: 20,
+    fontSize: 16,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
+  },
+  arrows: {
+    fontStyle: 'normal',
+    paddingTop: 20,
+    paddingLeft: 400,
+    fontSize: 36,
+    alignItems: 'center',
+    justifyContent: 'flex-start'
   }
 };
 

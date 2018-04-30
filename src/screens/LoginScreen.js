@@ -6,7 +6,9 @@ import LoginForm from '../components/LoginForm';
 
 class LoginScreen extends Component {
   static navigationOptions = {
-    headerLeft: null
+    headerLeft: null,
+    headerRight: null,
+    title: 'Login'
   };
   state = { loggedIn: null };
 
@@ -46,7 +48,7 @@ class LoginScreen extends Component {
   }
   render() {
     return (
-      <View>
+      <View style={{ flex: 1, backgroundColor: 'white' }}>
         {this.renderContent()}
       </View>
     );

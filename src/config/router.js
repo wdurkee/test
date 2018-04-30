@@ -9,6 +9,7 @@ import SearchScreen from '../screens/SearchScreen';
 import MapScreen from '../screens/MapScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderScreen from '../screens/OrderScreen';
+import UserScreen from '../screens/UserScreen';
 import { SearchButton, UserButton } from '../components/common';
 
 const RootStack = StackNavigator(
@@ -37,6 +38,9 @@ const RootStack = StackNavigator(
     Cart: {
       screen: CartScreen,
     },
+    User: {
+      screen: UserScreen,
+    }
   },
   {
 
@@ -49,10 +53,7 @@ const RootStack = StackNavigator(
       headerTintColor: '#fff',
       headerTitleStyle: {
         fontWeight: 'bold',
-      },
-      headerRight: (
-      <SearchButton />
-    ),
+      }
     },
   }
 );

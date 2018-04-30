@@ -1,24 +1,52 @@
 import React from 'react';
-import { Image, Text } from 'react-native';
+import { Image, Text, View, StyleSheet } from 'react-native';
+import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
 import { Card, CardSection } from '../components/common';
+
+let apiKey = 'AIzaSyDA5PV28nw7prqIm4eKzvw6JAXZxaMmaTM';
+
 
 class MapScreen extends React.Component {
   static navigationOptions = {
     title: 'Map Search',
+    headerRight: null
   };
   render() {
     return (
-      <Card>
-        <CardSection>
-          <Text>Map</Text>
-        </CardSection>
-        <CardSection>
-          <Image style={{ height: 200, width: 300 }} source={{ uri: 'https://my420tours.com/wp-content/uploads/2014/05/blog29.jpg' }} />
-        </CardSection>
-      </Card>
+      <View style={styles.container}>
+        <MapView
+        style={styles.map}
+        initialRegion={{
+          latitude: 37.78825,
+          longitude: -122.4324,
+          latitudeDelta: 0.0922,
+          longitudeDelta: 0.0421,
+        }}
+      />
+    </View>
 
     );
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  map: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+  },
+});
+
 
 export default MapScreen;

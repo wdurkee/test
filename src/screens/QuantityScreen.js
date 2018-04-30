@@ -2,15 +2,16 @@ import React from 'react';
 import { Image, Text, View } from 'react-native';
 import { Card, CardSection, Button, ListItem, List, ListDescription, ListSection, ListImage } from '../components/common';
 
-class DispensaryScreen extends React.Component {
+class QuantityScreen extends React.Component {
   static navigationOptions = {
     headerRight: null,
   };
   render() {
     const { params } = this.props.navigation.state;
-   const title = params ? params.title : null;
-   const rating = params ? params.rating : null;
-   const deliveryTime = params ? params.deliveryTime : null;
+    const title = params ? params.title : null;
+    const rating = params ? params.rating : null;
+    const deliveryTime = params ? params.deliveryTime : null;
+    const product = params ? params.product : null;
 
     return (
       <View style={{ flex: 1, alignItems: 'center', backgroundColor: 'white' }}>
@@ -28,16 +29,10 @@ class DispensaryScreen extends React.Component {
         </View>
 
         <Text style={styles.hours}>
-          8:00AM - 11:00PM
+          {product}
         </Text>
         <List>
-          <ListSection headerText='Indica'>
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-          </ListSection>
-          <ListSection headerText='Sativa'>
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+          <ListSection headerText='Choice of Size'>
             <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
             <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
             <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
@@ -101,4 +96,4 @@ const styles = {
   }
 }
 
-export default DispensaryScreen;
+export default QuantityScreen;
