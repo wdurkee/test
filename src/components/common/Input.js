@@ -29,9 +29,10 @@ const styles = {
     flex: 2
   },
   labelStyle: {
-    fontSize: 18,
+    fontSize: 14,
     paddingLeft: 20,
-    flex: 1
+    flex: 1,
+    fontWeight: 'bold'
   },
   containerStyle: {
     height: 40,

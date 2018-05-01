@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { View, Image } from 'react-native';
 import firebase from 'firebase';
 import { Spinner } from '../components/common';
 import LoginForm from '../components/LoginForm';
@@ -62,6 +62,7 @@ const styles = {
     alignItems: 'center',
     paddingTop: 200
   }
+
 };
 
 export default LoginScreen;

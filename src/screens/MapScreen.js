@@ -1,28 +1,33 @@
 import React from 'react';
 import { Image, Text, View, StyleSheet } from 'react-native';
-import MapView, { PROVIDER_GOOGLE } from 'react-native-maps';
+import MapView, { Marker } from 'react-native-maps';
+import CustomMarker from '../components/CustomMarker';
 import { Card, CardSection } from '../components/common';
-
-let apiKey = 'AIzaSyDA5PV28nw7prqIm4eKzvw6JAXZxaMmaTM';
-
 
 class MapScreen extends React.Component {
   static navigationOptions = {
     title: 'Map Search',
     headerRight: null
   };
+  state = {
+        latitude: 34.0431569,
+        longitude: -118.26189,
+        latitudeDelta: 0.05,
+        longitudeDelta: 0.05
+  }
   render() {
     return (
       <View style={styles.container}>
         <MapView
+        provider='google'
         style={styles.map}
-        initialRegion={{
-          latitude: 37.78825,
-          longitude: -122.4324,
-          latitudeDelta: 0.0922,
-          longitudeDelta: 0.0421,
-        }}
-      />
+        initialRegion={this.state}
+        >
+          <Marker coordinate={{ latitude: 34.0431569, longitude: -118.26189 }} onPress={() => { this.props.navigation.navigate('Dispensary', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ' }); }} >
+            <CustomMarker />
+          </Marker>
+
+        </MapView>
     </View>
 
     );

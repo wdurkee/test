@@ -5,6 +5,7 @@ import { Card, CardSection, Button, ListItem, List, ListDescription, ListSection
 class DispensaryScreen extends React.Component {
   static navigationOptions = {
     headerRight: null,
+    title: 'Dispensary'
   };
   render() {
     const { params } = this.props.navigation.state;
@@ -32,15 +33,15 @@ class DispensaryScreen extends React.Component {
         </Text>
         <List>
           <ListSection headerText='Indica'>
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
           </ListSection>
           <ListSection headerText='Sativa'>
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+            <ListItem onPress={() => this.props.navigation.navigate('Quantity', { rating: ' 4.9 ', title: 'MedMen', deliveryTime: '|  15 - 20 mins ', product: 'Gelato' })} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
           </ListSection>
         </List>
     </View>
@@ -90,15 +91,14 @@ const styles = {
     color: 'black',
   },
   hours: {
-    titleText: {
       fontSize: 14,
       fontWeight: 'bold',
       textAlign: 'center',
       alignItems: 'center',
       justifyContent: 'center',
       color: 'black'
-    },
+
   }
-}
+};
 
 export default DispensaryScreen;

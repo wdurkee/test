@@ -1,11 +1,19 @@
 import React from 'react';
-import { Image, Text, View } from 'react-native';
+import { Image, Text, View, TouchableOpacity } from 'react-native';
+import ListSelect from '../components/ListSelect';
 import { Card, CardSection, Button, ListItem, List, ListDescription, ListSection, ListImage } from '../components/common';
+
 
 class QuantityScreen extends React.Component {
   static navigationOptions = {
     headerRight: null,
+    title: 'Select Quantity'
   };
+    /*constructor(props) {
+        super(props);
+        this.state = { total: 0.00 };
+    }*/
+
   render() {
     const { params } = this.props.navigation.state;
     const title = params ? params.title : null;
@@ -31,11 +39,13 @@ class QuantityScreen extends React.Component {
         <Text style={styles.hours}>
           {product}
         </Text>
+        <Image style={styles.imageStyle} source={{ uri: 'https://cdn.herb.co/wp-content/uploads/2017/02/20170815-HERB-PeaceandLove-0083.jpg' }} />
         <List>
-          <ListSection headerText='Choice of Size'>
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
-            <ListItem onPress={() => this.props.navigation.navigate('Cart')} image='https://d3atagt0rnqk7k.cloudfront.net/wp-content/uploads/2013/08/20204949/dispensary-faqs.jpg' />
+          <ListSection headerText='Select Your Amount'>
+            <ListSelect amount='1/8' price={50.00} onPress={() => this.props.navigation.navigate('Cart', { amount: '1/8', price: 50, product: product, dispensary: title, deliveryTime: deliveryTime, rating: rating })} />
+            <ListSelect amount='1/4' price={80.00} onPress={() => this.props.navigation.navigate('Cart', { amount: '1/4', price: 80, product: product, dispensary: title, deliveryTime: deliveryTime, rating: rating })} />
+            <ListSelect amount='1/2' price={120.00} onPress={() => this.props.navigation.navigate('Cart', { amount: '1/2', price: 120, product: product, dispensary: title, deliveryTime: deliveryTime, rating: rating })} />
+            <ListSelect amount='OZ' price={220.00} onPress={() => this.props.navigation.navigate('Cart', { amount: 'OZ', price: 220, product: product, dispensary: title, deliveryTime: deliveryTime, rating: rating })} />
           </ListSection>
         </List>
     </View>
@@ -46,6 +56,16 @@ class QuantityScreen extends React.Component {
 
 
 const styles = {
+  totalStyle: {
+    paddingTop: 30,
+    paddingLeft: 200,
+    fontSize: 14,
+    fontWeight: 'bold'
+  },
+  imageStyle: {
+    width: 250,
+    height: 166
+  },
   titleBox: {
     justifyContent: 'center',
     flexDirection: 'column',
@@ -85,15 +105,26 @@ const styles = {
     color: 'black',
   },
   hours: {
-    titleText: {
-      fontSize: 14,
-      fontWeight: 'bold',
-      textAlign: 'center',
-      alignItems: 'center',
-      justifyContent: 'center',
-      color: 'black'
-    },
+    fontSize: 18,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    alignItems: 'center',
+    justifyContent: 'center',
+    color: 'black'
+  },
+  bottomButton: {
+    width: '100%',
+    height: 100,
+    backgroundColor: '#c2ceb5',
+    alignItems: 'center',
+    justifyContent: 'center'
+  },
+  bottomButtonText: {
+    color: 'white',
+    fontSize: 16,
+    fontWeight: 'bold',
+
   }
-}
+};
 
 export default QuantityScreen;

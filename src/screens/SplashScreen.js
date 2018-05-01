@@ -11,15 +11,13 @@ class SplashScreen extends React.Component {
   render() {
     return (
       <GestureRecognizer style={styles.viewStyle} onSwipeLeft={() => this.props.navigation.navigate('Login')} >
+
           <Text style={styles.textStyle}>
           Budlr at Your Service.
           </Text>
-          <Text style={styles.textStyleSmall}>
-          Swipe to Start  >>>
-          </Text>
-
-
-          <Image style={styles.manImageStyle} source={{ uri: 'https://www.clker.com/cliparts/3/u/P/P/q/W/walking-icon-hi.png' }} />
+          <View style={{ height: '57%', width: '100%', justifyContent: 'center', alignItems: 'center' }}>
+            <Image style={styles.manImageStyle} source={{ uri: 'https://www.clker.com/cliparts/3/u/P/P/q/W/walking-icon-hi.png' }} />
+          </View>
           <Text style={styles.arrows} >
             > > >
           </Text>
@@ -34,32 +32,24 @@ const styles = {
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'flex-start',
-    alignItems: 'stretch',
+    alignItems: 'flex-start',
     position: 'relative',
     backgroundColor: 'white'
   },
   textStyle: {
     fontStyle: 'italic',
-    paddingTop: 100,
+    paddingTop: 150,
     paddingLeft: 20,
     fontSize: 24,
     alignItems: 'center',
     justifyContent: 'flex-start'
   },
   manImageStyle: {
-    resizeMode: 'center',
-    flex: 1,
-    height: 50,
-    width: 20,
-    paddingLeft: 500,
-    paddingTop: 525
-  },
-  arrowImageStyle: {
-    flex: 1,
-    height: 100,
-    width: 100,
-    paddingLeft: 500,
-    paddingTop: 650
+    resizeMode: 'contain',
+    height: 350,
+    width: 175,
+    marginTop: 40,
+    marginLeft: 130
 
   },
   textStyleSmall: {
@@ -71,12 +61,9 @@ const styles = {
     justifyContent: 'flex-start'
   },
   arrows: {
-    fontStyle: 'normal',
-    paddingTop: 20,
-    paddingLeft: 400,
-    fontSize: 36,
-    alignItems: 'center',
-    justifyContent: 'flex-start'
+    fontSize: 40,
+    marginLeft: '60%',
+    marginTop: 25
   }
 };
 

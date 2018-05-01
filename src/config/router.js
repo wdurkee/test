@@ -10,6 +10,11 @@ import MapScreen from '../screens/MapScreen';
 import CartScreen from '../screens/CartScreen';
 import OrderScreen from '../screens/OrderScreen';
 import UserScreen from '../screens/UserScreen';
+import QuantityScreen from '../screens/QuantityScreen';
+import NotificationsScreen from '../screens/NotificationsScreen';
+import RecentOrderScreen from '../screens/RecentOrderScreen';
+import PaymentScreen from '../screens/PaymentScreen';
+import ContactScreen from '../screens/ContactScreen';
 import { SearchButton, UserButton } from '../components/common';
 
 const RootStack = StackNavigator(
@@ -40,6 +45,21 @@ const RootStack = StackNavigator(
     },
     User: {
       screen: UserScreen,
+    },
+    Quantity: {
+      screen: QuantityScreen,
+    },
+    Notifications: {
+      screen: NotificationsScreen,
+    },
+    RecentOrders: {
+      screen: RecentOrderScreen,
+    },
+    Payment: {
+      screen: PaymentScreen,
+    },
+    Contact: {
+      screen: ContactScreen,
     }
   },
   {
